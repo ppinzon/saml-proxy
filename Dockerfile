@@ -1,5 +1,4 @@
 FROM fedora:23
-MAINTAINER Barnabas Sudy <barnabas.sudy@gmail.com>
 
 RUN dnf install -y \
   apr-util-openssl \
@@ -14,8 +13,8 @@ RUN dnf install -y \
   gettext \
   && dnf clean all
 
-RUN ln -sf /dev/stdout /var/log/httpd/access.log && \
-    ln -sf /dev/stderr /var/log/httpd/error.log 
+RUN ln -sf /proc/1/fd/1 /var/log/httpd/access.log && \
+    ln -sf /proc/1/fd/2 /var/log/httpd/error.log 
 
 # Add mod_auth_mellon setup script
 ADD mellon_create_metadata.sh /usr/sbin/mellon_create_metadata.sh
