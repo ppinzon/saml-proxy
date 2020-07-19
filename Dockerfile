@@ -13,8 +13,8 @@ RUN dnf install -y \
   gettext \
   && dnf clean all
 
-RUN ln -sf /proc/1/fd/1 /var/log/httpd/access.log && \
-    ln -sf /proc/1/fd/2 /var/log/httpd/error.log 
+RUN ln -sf /proc/1/fd/1 /var/log/httpd/access_log && \
+    ln -sf /proc/1/fd/2 /var/log/httpd/error_log 
 
 # Add mod_auth_mellon setup script
 ADD mellon_create_metadata.sh /usr/sbin/mellon_create_metadata.sh
