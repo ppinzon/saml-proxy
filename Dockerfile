@@ -15,7 +15,7 @@ RUN dnf install -y \
   && dnf clean all
 
 RUN ln -sf /dev/stdout /var/log/httpd/access.log && \
-    ln -sf /dev/stderr /var/log/httpd/error.log && \
+    ln -sf /dev/stderr /var/log/httpd/error.log 
 
 # Add mod_auth_mellon setup script
 ADD mellon_create_metadata.sh /usr/sbin/mellon_create_metadata.sh
