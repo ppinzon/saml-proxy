@@ -21,6 +21,7 @@ ADD mellon_create_metadata.sh /usr/sbin/mellon_create_metadata.sh
 
 # Add conf file for Apache
 ADD proxy.conf /etc/httpd/conf.d/proxy.conf.template
+ADD metadata.xml /etc/httpd/conf.d/saml_idp.xml
 
 EXPOSE 80
 
